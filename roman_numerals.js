@@ -1,5 +1,26 @@
 function convertToCoin (money) {
-  // your implementation code here
+  var lookup = {
+                A:10000,
+                B:5000,
+                C:2000,
+                D:1000,
+                E:500,
+                F:200,
+                G:100,
+                H:50,
+                I:20,
+                J:10,
+                K:1
+              }
+  var coin = []
+  var i;
+  for ( i in lookup ) {
+    while ( money >= lookup[i] ) {
+      coin.push(lookup[i]);
+      money -= lookup[i];
+    }
+  }
+  return coin;
 }
 
 // Drive code
