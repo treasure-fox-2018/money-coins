@@ -1,5 +1,19 @@
 function convertToCoin (money) {
   // your implementation code here
+  if (money === 0) return 0;
+
+  let currency = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 1];
+  let index = 0
+
+  for (let i = 0; i < currency.length; i++) {
+    if (money - currency[i] >= 0) {
+      money -= currency[i];
+      index = i;
+      break;
+    }
+  }
+  
+  return `${currency[index]}, ` + convertToCoin(money)
 }
 
 // Drive code
