@@ -1,5 +1,17 @@
 function convertToCoin (money) {
-  // your implementation code here
+  const coins = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 1];
+  const output = [];
+
+  if (money < 0) {
+    return 'Invalid money';
+  }
+  for (let i = 0; i < coins.length; i++) {
+    while (money >= coins[i]) {
+      output.push(coins[i]);
+      money -= coins[i];
+    }
+  }
+  return(output);
 }
 
 // Drive code
