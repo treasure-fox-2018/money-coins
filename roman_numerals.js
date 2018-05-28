@@ -1,5 +1,17 @@
 function convertToCoin (money) {
-  // your implementation code here
+    var pecahanUang = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 1];
+    var uang = money;
+    var result = [];
+
+    for (var i = 0; i < pecahanUang.length; i++) {
+        while (uang >= pecahanUang[i]) {
+            result.push(pecahanUang[i]);
+            uang -= pecahanUang[i];
+        }
+    }
+
+    return result;
+
 }
 
 // Drive code
