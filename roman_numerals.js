@@ -1,5 +1,14 @@
 function convertToCoin (money) {
   // your implementation code here
+  var arrPecahan=[10000,5000,2000,1000,500,200,100,50,20,10,1]
+  var arrResult=[];
+  for(var i = 0; i<arrPecahan.length ; i++){
+    while(arrPecahan[i]<money){
+      arrResult.push(arrPecahan[i])
+      money=money-arrPecahan[i]
+    }
+  }
+  return arrResult
 }
 
 // Drive code
