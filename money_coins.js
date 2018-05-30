@@ -1,28 +1,13 @@
 function convertToCoin (money) {
   // your implementation code here
-  let moneyObj = {
-    10000: [],
-    5000: [],
-    2000: [],
-    1000: [],
-    500: [],
-    200: [],
-    100: [],
-    50: [],
-    20: [],
-    10: [],
-    1: [],
-  }
-
-  let keys = Object.keys(moneyObj)
+  let moneyArr = [10000, 5000, 2000, 1000, 500, 200, 100, 50, 20, 10, 1]
   let hasil = []
 
-  for (let a = keys.length-1; a >= 0; a--) {
-    while ((money - keys[a]) > 0) {
-      hasil.push(keys[a])
-      money = money - keys[a]
+  for (let a = 0; a < moneyArr.length; a++) {
+    while ((money - moneyArr[a]) >= 0) {
+      hasil.push(moneyArr[a])
+      money = money - moneyArr[a]
     }
-    console.log(a, money, hasil)
   }
   return hasil
 }
